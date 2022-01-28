@@ -13,7 +13,7 @@ int main()
 	int d;
 	double e;
 	char ch, terminator;
-	int row, col;
+	int row[8], col[8];
 
 	//Objects
 	showSeat SEAT;
@@ -66,7 +66,10 @@ int main()
 	SEAT.initialiseFloorPlan();
 	SEAT.displayFloorPlan();
 	d = SEAT.getNumSeats();
-	SEAT.getSeatSelection(row, col);
+	for (int i = 0; i < d; i++)
+	{
+		SEAT.getSeatSelection(row[i], col[i]);
+	}
 	SEAT.displayFloorPlan();
 
 	//Deals with discounts, payment and ticket generation
@@ -85,14 +88,17 @@ int main()
 	cout << "=====================================================================" << endl;
 	cout << "================= The Bucks Centre for the Perfomring Arts ===========" << endl;
 	cout << "================= Enjoy the show! ================" << endl;
-	cout << "Show:" << f << endl;
-	cout << "Date:" << g << endl;
-	cout << "Time:" << h << endl;
+	cout << "Show: " << a << endl;
+	cout << "Date: " << b << endl;
+	cout << "Time: " << c << endl;
 	cout << "======================================================================" << endl;
 	cout << "Number or seats: " << d << endl;
 	cout << "Total cost: " << (char)156 << totalCost << endl;
-	cout << "Ticket purchase" << f << " " << g << endl;
-	cout << "Postal address" << h << endl;
+	for (int i = 0; i < d; i++)
+	{
+		cout << "Ticket purchase " << i << " row: " << row[i] << " Seat: " << col[i] << endl;
+	}
+	cout << "Postal address: " << h << endl;
 	cout << "======================================================================" << endl;
 	cout << "======================================================================\n\n" << endl;
 

@@ -91,6 +91,7 @@ void showSeat::getSeatSelection(int& r, int& c)
 	int row;
 	int col;
 	bool gotSeat = false;
+	char terminator;
 
 	while (!gotSeat)
 	{
@@ -121,6 +122,8 @@ void showSeat::getSeatSelection(int& r, int& c)
 		c = col;
 		floorPlan[row][col] = 'B';
 		gotSeat = true;
+
+		cin.get(terminator);
 	}
 
 }
